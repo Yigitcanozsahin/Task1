@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav Sonucu</title>
+    <style>
+        .puan_tablosu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .puan_tablosu h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .puan_tablosu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .puan_tablosu li {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sonuç</h1>
+    <div class="puan_tablosu">
+        <h2>En Yüksek Puanlar</h2>
+        <ul>
+            {% for score in en_yuksek_puanlar %}
+                <li>{{ score['score'] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <p>Skorunuz: {{ score }}</p>
+
+    <a href="{{ url_for('anasayfa') }}">
+        <button>Anasayfaya Dön</button>
+    </a>
+
+    <footer style="margin-top: 50px; text-align: center;">
+        <p>Yiğit Can Özşahin</p>
+        <p>Bilgisayar Mühendisi</p>
+    </footer>
+</body>
+</html>

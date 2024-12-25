@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav</title>
+    <style>
+        .puan_tablosu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .puan_tablosu h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .puan_tablosu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .puan_tablosu li {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sınav: Python Konuları</h1>
+    <div class="puan_tablosu">
+        <h2>En Yüksek Puanlar</h2>
+        <ul>
+            {% if en_yuksek_puanlar %}
+                {% for score in en_yuksek_puanlar %}
+                    <li>{{ score['score'] }}</li>
+                {% endfor %}
+            {% else %}
+                <li>Henüz puan yok.</li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <form method="POST">
+
+        <label for="question1">Python’da AI modellerini eğitmek için hangi kütüphane yaygın olarak kullanılır?</label><br>
+        <input type="radio" name="question1" value="a"> A) NumPy<br>
+        <input type="radio" name="question1" value="b"> B) Pandas<br>
+        <input type="radio" name="question1" value="c"> C) Scikit-learn<br>
+        <input type="radio" name="question1" value="d"> D) Matplotlib<br><br>
+
+        <label for="question2">Python'da yapay zeka uygulamalarında, hangi kütüphane derin öğrenme modelleri için yaygın olarak kullanılır?</label><br>
+        <input type="radio" name="question2" value="a"> A) TensorFlow<br>
+        <input type="radio" name="question2" value="b"> B) Flask<br>
+        <input type="radio" name="question2" value="c"> C) Django<br>
+        <input type="radio" name="question2" value="d"> D) Requests<br><br>
+
+        <label for="question3">Python'da bir AI modelini eğitmek için, hangi terim modelin “öğrenme” sürecini ifade eder?</label><br>
+        <input type="radio" name="question3" value="a"> A) Debugging<br>
+        <input type="radio" name="question3" value="b"> B) Training<br>
+        <input type="radio" name="question3" value="c"> C) Printing<br>
+        <input type="radio" name="question3" value="d"> D) Dancing<br><br>
+
+        <label for="question4">Yapay zeka, insanlara benzer düşünme süreçlerini taklit etmeye çalışırken, hangi “zihin” kavramını kullanır?</label><br>
+        <input type="radio" name="question4" value="a"> A) Akıl<br>
+        <input type="radio" name="question4" value="b"> B) Sinir ağı (Neural Network)<br>
+        <input type="radio" name="question4" value="c"> C) Zeka testi<br>
+        <input type="radio" name="question4" value="d"> D) Duygu<br><br>
+
+        <label for="question5">Bir AI modelinin, eğitim verisinde aşırı başarılı olup, yeni verilere uyum sağlayamaması durumu aşağıdaki hangi terimle tanımlanır?</label><br>
+        <input type="radio" name="question5" value="a"> A) Underfitting<br>
+        <input type="radio" name="question5" value="b"> B) Overfitting<br>
+        <input type="radio" name="question5" value="c"> C) Hacking<br>
+        <input type="radio" name="question5" value="d"> D) Optimizing<br><br>
+
+        <label for="question6">AI projelerinde, bilgisayarların “görme” yeteneği olarak adlandırılan teknoloji hangisidir?</label><br>
+        <input type="radio" name="question6" value="a"> A) Facial Recognition<br>
+        <input type="radio" name="question6" value="b"> B) Machine Learning<br>
+        <input type="radio" name="question6" value="c"> C) Computer Vision<br>
+        <input type="radio" name="question6" value="d"> D) Audio Processing<br><br>
+
+        <button type="submit">Gönder</button>
+    </form>
+
+    <footer style="margin-top: 50px; text-align: center;">
+        <p>Yiğit Can Özşahin</p>
+        <p>Bilgisayar Mühendisi</p>
+    </footer>
+</body>
+</html>
